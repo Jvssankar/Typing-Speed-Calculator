@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Typing Speed Test</h1>
+    <p>Type the following sentence as quickly and accurately as possible:</p>
+    <p>{{ sample_text }}</p>
+    
+    <form action="/result" method="POST" onsubmit="document.getElementById('start_time').value = new Date().getTime()">
+        <textarea name="user_input" placeholder="Start typing here..."></textarea>
+        <input type="hidden" name="start_time" id="start_time" value="">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
