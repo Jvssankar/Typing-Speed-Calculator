@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        p {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Typing Speed Result</h1>
+    <p><strong>Time taken:</strong> {{ total_time|round(2) }} seconds</p>
+    <p><strong>Typing Speed:</strong> {{ wpm|round(2) }} WPM</p>
+    <p><strong>Accuracy:</strong> {{ accuracy|round(2) }}%</p>
+    <p><strong>Original Text:</strong></p>
+    <p>{{ sample_text }}</p>
+    <p><strong>Your Text:</strong></p>
+    <p>{{ user_input }}</p>
+    <a href="{{ url_for('index') }}">Try Again</a>
+</body>
+</html>
